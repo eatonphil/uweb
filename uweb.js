@@ -81,8 +81,8 @@ class HTTPRequestHandler {
     }
 
     const serialized = 'HTTP/1.1 ${response.status} ${response.statusMessage}' + CRLF +
-                       'Content-Length: ' + ${response.body.length} + CRLF + CRLF +
-                       body;
+                       'Content-Length: ' + response.body.length + CRLF + CRLF +
+                       response.body;
     this.connection.write(serialized);
   }
 
